@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %} Marks {% endblock title %}
+{% block body %}
+<div class="container-fluid">
+
+  <table class="table table-striped table-dark">
+    <thead>
+      <tr>
+        <th scope="col">Name</th>
+        <th scope="col">Roll Number</th>
+        <th scope="col">DOB</th>
+        <th scope="col">Marks</th>
+        <th scope="col">Grade</th>
+
+      </tr>
+    </thead>
+    <tbody>
+      {% for data in dataset %}
+      <tr>
+        <td>{{data.student.Name}}</td>
+        <td>{{data.student.Roll_Number}}</td>
+        <td>{{data.student.DOB}}</td>
+        <td>{{data.Marks}}</td>
+        <td>{{data.Grade}}</td>
+      </tr>
+      {% endfor %}
+      <tr>
+        <td>{{dataset1.Name}}</td>
+        <td>{{dataset1.Roll_Number}}</td>
+        <td>{{dataset1.DOB}}</td>
+        <td></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  </div>
+
+  <form method = 'post' style="margin-bottom: 5%;" >
+    {% csrf_token %}
+    <div class="container form-group">
+      
+    <div class="mb-3 form-group">
+      <label for="name" name ='name' class="form-label">Marks *</label>
+      <input type="number" name='marking' class="form-control" max = 100 , min =1 required dir ='auto' data-initial-dir='auto'>
+    </div>
+    
+    <button type ='submit' class = 'btn btn-primary'>Submit</button>
+    
+    
+    </div>
+    </form>
+  {% endblock body %}

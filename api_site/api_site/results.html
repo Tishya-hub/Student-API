@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %} Results {% endblock title %}
+{% block body %}
+
+
+<h2> The total number of registered students --> {{tot_stu}} </h2>
+<h2> The total number of marked students --> {{tot_marked_Stu}}</h2>
+
+<h3> The number of students in each grade </h3>
+{% for i in stu_grade %}
+  <p align = 'center'>{{ i.Grade }} --> {{i.dcount}} </p>
+{% endfor %}
+
+<h2> Distinction percentage --> {{Distinction}} </h2>
+<h2> First_class percentage --> {{first_class}} </h2>
+<h2> Pass percentage --> {{Pass}} </h2>
+
+{% endblock body %}
