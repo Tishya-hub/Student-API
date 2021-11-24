@@ -1,0 +1,3 @@
+Requirement:-  install django
+To run :- from command prompt visit same directory where manage.py file exists
+then python manage.py runserver
